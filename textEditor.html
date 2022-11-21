@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 400px;
+        }
+        div#area {
+            font: normal 18pt Arial;
+            width: 800px;
+            height: 100px;
+            border: 5px solid gray;
+            margin-top: 20px;
+            line-height: 100px;
+            text-align: center;
+            
+        }
+        input#n {
+            margin-top: 08px;
+            width: 60px;
+            margin-right: 5px;
+        }
+        input#blue {
+            margin-top: 08px;
+            width: 60px;
+            margin-right: 5px;
+        }
+        input#m {
+            margin-top: 08px;
+            width: 75px;
+            margin-bottom: 08px;
+        }
+        input#enviar {
+            margin-top: 08px;
+            width: 60px;
+            
+        }input#red {
+            margin-top: 08px;
+            width: 80px;
+            margin-right: 5px;
+        }
+             
+        input#black {
+            margin-top: 08px;
+            width: 60px;
+            margin-right: 5px;
+        }
+        input#i {
+            margin-top: 08px;
+            width: 60px;
+            margin-right: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>DIGITE SEU TEXTO</h1>
+    <input type="text" id="texto" placeholder="Digite Aqui" maxlength="49">
+    <input type='submit' id='enviar' value='enviar'>
+    <div id="area"></div>
+    <p> <strong> MODO: </strong> </p>
+    <input type="button" id="n" value="Negrito">
+    <input type="button" id="m" value="Maiúsculo">
+    <input type="button" id="i" value="Itálico">
+    <p> <strong> COR: </strong> </p>
+    <input type="button" id="blue" value="Azul">
+    <input type="button" id="red" value="Vermelho">
+    <input type="button" id="black" value="Preto">
+    
+    <script>
+    
+    var txt = document.getElementById ('texto')
+
+    function enviar() {
+        var texto = (txt.value)
+        console.log(texto)
+        var recebeu = document.getElementById ('area')
+        recebeu.innerText = `${texto}`
+    }
+
+    function negrito() {
+        var texto = (txt.value)
+        console.log(texto)
+        var recebeu = document.getElementById ('area')
+        recebeu.innerHTML = txt.value.bold()
+    }
+
+    function italico() {
+        var texto = (txt.value)
+        console.log(texto)
+        var recebeu = document.getElementById ('area')
+        recebeu.innerHTML = txt.value.italics()
+    }
+
+    function maiusculo() {
+        var texto = (txt.value)
+        console.log(texto)
+        var recebeu = document.getElementById ('area')
+        recebeu.innerHTML = txt.value.toUpperCase()
+    }
+
+    function colorblue() {
+        var texto = (txt.value)
+        console.log(texto)
+        var recebeu = document.getElementById ('area')
+        recebeu.innerHTML = `${texto}`
+        document.getElementById ('area').style.color = 'blue'
+    }
+
+    function colorred() {
+        var texto = (txt.value)
+        console.log(texto)
+        var recebeu = document.getElementById ('area')
+        recebeu.innerHTML = `${texto}`
+        document.getElementById ('area').style.color = 'red'
+    }
+
+    function colorblack() {
+        var texto = (txt.value)
+        console.log(texto)
+        var recebeu = document.getElementById ('area')
+        recebeu.innerHTML = `${texto}`
+        document.getElementById ('area').style.color = 'black'
+    }
+
+    const ver = document.getElementById ('enviar')
+    ver.addEventListener("click", enviar)
+
+    const ner = document.getElementById ('n')
+    ner.addEventListener("click", negrito)
+
+    const mai = document.getElementById ('m')
+    mai.addEventListener("click", maiusculo)
+
+    const corazul = document.getElementById ('blue')
+    corazul.addEventListener("click", colorblue)
+
+    const redcolor = document.getElementById ('red')
+    redcolor.addEventListener("click", colorred)
+
+    const blackcolor = document.getElementById ('black')
+    blackcolor.addEventListener("click", colorblack)
+
+    const ita = document.getElementById ('i')
+    ita.addEventListener("click", italico)
+
+    </script>
+    </script>
+
+</body> 
+</html>
+    
